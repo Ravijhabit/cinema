@@ -28,8 +28,6 @@ const HeroBanner = () =>{
         if(event.key === 'Enter' && query.length > 0){
             navigate(`/search/${query}`);
         }
-        event.preventDefault();
-
     }
 
     return(
