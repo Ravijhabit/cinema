@@ -41,7 +41,7 @@ const DetailsBanner = ({ video, crew} ) => {
                     {!!data && (
                         <React.Fragment>
                             <div className="backdrop-img">
-                                <Img src={url.backdrop + data?.backdrop_path}/>
+                                <Img src={url.backdrop + data.backdrop_path}/>
                             </div>
                             <div className="opacity-layer"></div>
                             <ContentWrapper>
@@ -68,8 +68,8 @@ const DetailsBanner = ({ video, crew} ) => {
                                             rating={data.vote_average.toFixed(1)}/>
                                             <div className="playbtn"
                                             onClick={()=>{
-                                                setShow(true)
-                                                setVideoId(video.key)
+                                                setShow(true);
+                                                setVideoId(video.key);
                                             }}>
                                                 <PlayIcon/>
                                                 <span className="text">
