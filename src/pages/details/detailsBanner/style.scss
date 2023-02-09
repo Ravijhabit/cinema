@@ -113,6 +113,8 @@
                 display:flex;
                 align-items:center;
                 gap:20px;
+                border:0;
+                background-color: transparent;
                 cursor:pointer;
                 svg{
                     width: 60px;
@@ -123,6 +125,7 @@
                 .text{
                     font-size:20px;
                     transition: all 0.7s ease-in-out;
+                    color:#fff;
                 }
                 .triangle{
                     stroke-dasharray: 240;
@@ -151,6 +154,9 @@
                         stroke-dashoffset:0;
                         stroke: var(--pink);
                     }
+                }
+                &:disabled{
+                    cursor:not-allowed;
                 }
             }
             .row{

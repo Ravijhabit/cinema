@@ -1,4 +1,7 @@
 @import '../../../mixins.scss';
+.invisible{
+    display: none;
+}
 .videosSection{
     position: relative;
     margin-bottom: 50px;

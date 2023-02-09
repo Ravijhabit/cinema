@@ -36,7 +36,6 @@ const Carousel = ( { data, loading, endpoint, title } ) => {
     };
 
     const skItem = () => {
-        console.log('Hii');
         return(
             <div className="skeletonItem">
                 <div className="posterBlock skeleton">
@@ -50,11 +49,11 @@ const Carousel = ( { data, loading, endpoint, title } ) => {
     }
 
     return(
-        <div className="carousel">
+        <div className={`carousel ${data?.length===0 ? 'invisible':''}`}>
             <ContentWrapper>
                 {title && <div className="carouselTitle">{title}</div>}
-                <BsFillArrowLeftCircleFill className="carouselLeftNav arrow" onClick={() => navigation("left") }/>
-                <BsFillArrowRightCircleFill className="carouselRightNav arrow" onClick={() => navigation("right") }/>
+                <BsFillArrowLeftCircleFill className={`carouselLeftNav arrow ${data?.length>=5 ? '' :'invisible'}`} onClick={() => navigation("left") }/>
+                <BsFillArrowRightCircleFill className={`carouselRightNav arrow ${data?.length>=5 ? '' :'invisible'}`} onClick={() => navigation("right") }/>
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {

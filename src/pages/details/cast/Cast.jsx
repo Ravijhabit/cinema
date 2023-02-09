@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactReduxContext, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './style.scss';
 
@@ -20,7 +20,7 @@ const Cast = ({ data,loading }) => {
         );
     };
     return(
-        <div className="castSection">
+        <div className={`castSection ${data?.length===0 ? 'invisible':''}`}  >
             <ContentWrapper>
                 <div className="sectionHeading">
                     Top Cast

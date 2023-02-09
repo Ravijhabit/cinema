@@ -33,7 +33,6 @@ const DetailsBanner = ({ video, crew} ) => {
         const minutes = totalMinutes % 60;
         return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
     };
-
     return (
         <div className="detailsBanner">
             {!loading ? (
@@ -55,7 +54,7 @@ const DetailsBanner = ({ video, crew} ) => {
                                     </div>
                                     <div className="right">
                                         <div className="title">
-                                        {`${data.name || data.title} (${dayjs(data?.release_date).format("YYYY")})`} 
+                                        {`${data.name || data.title} ${ data?.release_date ? '('+dayjs(data?.release_date).format("YYYY")+')':''}`} 
                                         </div>
                                         <div className="subtitle">
                                             {data.tagline}
@@ -66,7 +65,9 @@ const DetailsBanner = ({ video, crew} ) => {
                                         <div className="row">
                                             <CircleRating
                                             rating={data.vote_average.toFixed(1)}/>
-                                            <div className="playbtn"
+                                            {console.log(video)}
+                                            <button className="playbtn"
+                                            disabled={!video?.key}
                                             onClick={()=>{
                                                 setShow(true);
                                                 setVideoId(video.key);
@@ -75,7 +76,7 @@ const DetailsBanner = ({ video, crew} ) => {
                                                 <span className="text">
                                                     Watch Trailer
                                                 </span>
-                                            </div>
+                                            </button>
                                         </div>
 
                                         <div className="overview">

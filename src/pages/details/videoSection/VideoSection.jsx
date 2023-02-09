@@ -22,9 +22,9 @@ const VideosSection = ({data, loading}) => {
     };
 
     return(
-        <div className="videosSection">
+        <div className={`videosSection ${data?.results?.length===0 ? 'invisible':''}`}>
             <ContentWrapper>
-                <div className="sectionHeading">Official Videos</div>
+                <div className={`sectionHeading`}>Official Videos</div>
                 {!loading ? (
                     <div className="videos">
                         {data?.results?.map((video) => (
